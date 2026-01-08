@@ -32,29 +32,21 @@ const skills = [
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
       {/* Bg */}
-      <div className="absolute inset-0">
-        <img
-          src="/hero-bg.jpg"
-          alt="Hero image"
-          className="w-full h-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
-      </div>
+      <div className="absolute inset-0 bg-black" />
 
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
-            className="absolute w-1.5 h-1.5 rounded-full opacity-60"
+            className="absolute w-0.5 h-0.5 rounded-full opacity-60"
             style={{
-              backgroundColor: "#20B2A6",
+              backgroundColor: "rgba(228, 228, 228, 1)",
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${
-                15 + Math.random() * 20
-              }s ease-in-out infinite`,
+              animation: `slow-drift ${15 + Math.random() * 20
+                }s ease-in-out infinite`,
               animationDelay: `${Math.random() * 5}s`,
             }}
           />
@@ -66,77 +58,40 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-8">
-            <div className="animate-fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
-                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                High School Student • Aspiring Economist and Data Scientist
-              </span>
-            </div>
 
-            {/* Headline */}
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Hi, I'm Amanda
+            {/* Headline com badge acima */}
+            <div
+              className="absolute right-0 top-1/2 -translate-y-1/2 pr-8 flex flex-col items-end"
+              style={{ perspective: '700px' }}
+            >
+              {/* Badge */}
+              <div
+                className="animate-fade-in mb-6"
+                style={{
+                  transform: 'rotateY(25deg)',
+                  transformOrigin: 'left center',
+                }}
+              >
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
+                  <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                  High School Student • Aspiring Economist and Data Scientist
+                </span>
+              </div>
+
+              <h1
+                className="text-6xl md:text-8xl lg:text-9xl font-black leading-none uppercase tracking-tight text-right select-none"
+                style={{
+                  transform: 'rotateY(-25deg)',
+                  transformOrigin: 'right center',
+                }}
+              >
+                <InteractiveHoverText text="Amanda" />
                 <br />
-                Massarioli
-                <br />
+                <InteractiveHoverText text="Massarioli" />
               </h1>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
-                Contact Me <ArrowRight className="w-5 h-5" />
-              </Button>
-              <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
-                Download CV
-              </AnimatedBorderButton>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-              <span className="text-sm text-muted-foreground">Follow me: </span>
-              {[
-                { icon: Github, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Twitter, href: "#" },
-              ].map((social, idx) => (
-                <a
-                  key={idx}
-                  href={social.href}
-                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
-                >
-                  {<social.icon className="w-5 h-5" />}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Skills Section */}
-        <div className="mt-20 animate-fade-in animation-delay-600">
-          <p className="text-sm text-muted-foreground mb-6 text-center">
-            Technologies I work with
-          </p>
-          <div className="relative overflow-hidden">
-            <div
-              className="absolute left-0 top-0 bottom-0 w-32
-             bg-gradient-to-r from-background to-transparent z-10"
-            />
-            <div
-              className="absolute right-0 top-0 bottom-0 w-32
-             bg-gradient-to-l from-background to-transparent z-10"
-            />
-            <div className="flex animate-marquee">
-              {[...skills, ...skills].map((skill, idx) => (
-                <div key={idx} className="flex-shrink-0 px-8 py-4">
-                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
-                    {skill}
-                  </span>
-                </div>
-              ))}
-            </div>
+            {/* Social Links - mantendo removido conforme edit anterior do usuario, apenas fechando a div correta se necessario */}
           </div>
         </div>
       </div>
@@ -154,5 +109,23 @@ export const Hero = () => {
         </a>
       </div>
     </section>
+  );
+};
+
+const InteractiveHoverText = ({ text }) => {
+  return (
+    <span className="inline-block group cursor-default">
+      {text.split("").map((char, index) => (
+        <span
+          key={index}
+          className="inline-block transition-all duration-300 group-hover:text-transparent group-hover:[-webkit-text-stroke:2px_white] group-hover:-translate-y-4"
+          style={{
+            transitionDelay: `${index * 30}ms`
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </span>
+      ))}
+    </span>
   );
 };
