@@ -32,7 +32,7 @@ const skills = [
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-black">
       {/* Bg */}
       <div className="absolute inset-0 bg-black" />
 
@@ -79,7 +79,7 @@ export const Hero = () => {
               </div>
 
               <h1
-                className="text-6xl md:text-8xl lg:text-9xl font-black leading-none uppercase tracking-tight text-right select-none"
+                className="text-10xl md:text-9xl lg:text-10xl font-black leading-none uppercase tracking-tight text-right select-none"
                 style={{
                   transform: 'rotateY(-25deg)',
                   transformOrigin: 'right center',
@@ -90,14 +90,12 @@ export const Hero = () => {
                 <InteractiveHoverText text="Massarioli" />
               </h1>
             </div>
-
-            {/* Social Links - mantendo removido conforme edit anterior do usuario, apenas fechando a div correta se necessario */}
           </div>
         </div>
       </div>
 
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 
       animate-fade-in animation-delay-800"
       >
         <a
