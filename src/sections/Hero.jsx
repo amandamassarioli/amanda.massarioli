@@ -72,22 +72,21 @@ export const Hero = () => {
                   transformOrigin: 'left center',
                 }}
               >
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
-                  <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                  High School Student • Aspiring Economist and Data Scientist
-                </span>
+
               </div>
 
               <h1
-                className="text-10xl md:text-9xl lg:text-10xl font-black leading-none uppercase tracking-tight text-right select-none"
+                className="flex flex-col items-end text-10xl md:text-9xl lg:text-10xl font-black leading-none uppercase tracking-tight select-none"
                 style={{
                   transform: 'rotateY(-25deg)',
                   transformOrigin: 'right center',
                 }}
               >
-                <InteractiveHoverText text="Amanda" />
-                <br />
-                <InteractiveHoverText text="Massarioli" />
+                <InteractiveHoverText text="High School Student" className="text-4xl" />
+                <InteractiveHoverText text="Aspiring Economist and Data Scientist" className="text-4xl mt-1 mb-6" />
+                <InteractiveHoverText text="Amanda" className="text-15xl" />
+                <InteractiveHoverText text="Massarioli" className="text-15xl" />
+
               </h1>
             </div>
           </div>
@@ -110,9 +109,9 @@ export const Hero = () => {
   );
 };
 
-const InteractiveHoverText = ({ text }) => {
+const InteractiveHoverText = ({ text, className = "" }) => {
   return (
-    <span className="inline-block group cursor-default">
+    <span className={`inline-block group cursor-default ${className}`}>
       {text.split("").map((char, index) => (
         <span
           key={index}
