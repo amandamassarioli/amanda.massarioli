@@ -1,15 +1,14 @@
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Twitter, Heart, Mail } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Github, href: "https://github.com/amandamassarioli", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/amanda-marinho-massarioli-156627300/", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:amandamassarioli3@gmail.com", label: "Gmail" },
 ];
 
 const footerLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
 
