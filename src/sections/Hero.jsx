@@ -67,9 +67,9 @@ export const Hero = () => {
                 className="flex flex-col items-center lg:items-end font-black leading-none uppercase tracking-tight select-none hero-text-transform"
               >
                 <InteractiveHoverText text="High School Student" className="text-xl md:text-3xl lg:text-4xl text-center lg:text-right" />
-                <InteractiveHoverText text="Aspiring Economist and Data Scientist" className="text-xl md:text-3xl lg:text-4xl mt-2 mb-6 md:mb-8 text-center lg:text-right" />
-                <InteractiveHoverText text="Amanda" className="text-6xl md:text-8xl lg:text-15xl" />
-                <InteractiveHoverText text="Massarioli" className="text-6xl md:text-8xl lg:text-15xl" />
+                <InteractiveHoverText text="Aspiring Economist and Data Scientist" className="text-xl md:text-3xl lg:text-4xl mt-4 mb-8 md:mb-8 text-center lg:text-right" />
+                <InteractiveHoverText text="Amanda" className="text-7xl md:text-8xl lg:text-15xl" />
+                <InteractiveHoverText text="Massarioli" className="text-7xl md:text-8xl lg:text-15xl" />
               </h1>
             </div>
           </div>

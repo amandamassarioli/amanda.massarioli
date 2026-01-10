@@ -64,23 +64,23 @@
     box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
   }
-  
+
   /* Hero Section 3D Effects - Responsive */
   .hero-perspective-container {
-      perspective: 700px;
+    perspective: 500px;
   }
 
-  @media (max-width: 1023px) {
-    .hero-perspective-container {
-      perspective: none;
-    }
-    
-    .hero-text-transform {
-      transform: none !important;
-    }
+  .hero-text-transform {
+    transform: rotateY(-8deg);
+    /* Much more subtle for mobile */
+    transform-origin: center center;
   }
 
   @media (min-width: 1024px) {
+    .hero-perspective-container {
+      perspective: 700px;
+    }
+
     .hero-text-transform {
       transform: rotateY(-25deg);
       transform-origin: right center;
