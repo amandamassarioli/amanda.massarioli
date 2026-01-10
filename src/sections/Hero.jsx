@@ -54,39 +54,22 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-9 pt-32 pb-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 md:px-9 pt-32 pb-20 relative z-10 h-full flex flex-col justify-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center h-full">
           {/* Left Column - Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 h-full flex flex-col justify-center">
 
             {/* Headline com badge acima */}
             <div
-              className="absolute right-0 top-1/2 -translate-y-1/2 pr-8 flex flex-col items-end"
-              style={{ perspective: '700px' }}
+              className="lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 pr-0 lg:pr-8 flex flex-col items-center lg:items-end w-full lg:w-auto hero-perspective-container"
             >
-              {/* Badge */}
-              <div
-                className="animate-fade-in mb-6"
-                style={{
-                  transform: 'rotateY(25deg)',
-                  transformOrigin: 'left center',
-                }}
-              >
-
-              </div>
-
               <h1
-                className="flex flex-col items-end text-10xl md:text-9xl lg:text-10xl font-black leading-none uppercase tracking-tight select-none"
-                style={{
-                  transform: 'rotateY(-25deg)',
-                  transformOrigin: 'right center',
-                }}
+                className="flex flex-col items-center lg:items-end font-black leading-none uppercase tracking-tight select-none hero-text-transform"
               >
-                <InteractiveHoverText text="High School Student" className="text-4xl" />
-                <InteractiveHoverText text="Aspiring Economist and Data Scientist" className="text-4xl mt-1 mb-6" />
-                <InteractiveHoverText text="Amanda" className="text-15xl" />
-                <InteractiveHoverText text="Massarioli" className="text-15xl" />
-
+                <InteractiveHoverText text="High School Student" className="text-xl md:text-3xl lg:text-4xl text-center lg:text-right" />
+                <InteractiveHoverText text="Aspiring Economist and Data Scientist" className="text-xl md:text-3xl lg:text-4xl mt-2 mb-6 md:mb-8 text-center lg:text-right" />
+                <InteractiveHoverText text="Amanda" className="text-6xl md:text-8xl lg:text-15xl" />
+                <InteractiveHoverText text="Massarioli" className="text-6xl md:text-8xl lg:text-15xl" />
               </h1>
             </div>
           </div>
