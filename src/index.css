@@ -169,6 +169,29 @@
     animation-delay: 300ms;
   }
 
+  /* Beacon Pulse Animation */
+  @keyframes beacon-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+
+  .animate-beacon-pulse {
+    animation: beacon-pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* Map Masking */
+  .map-mask {
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  }
+
   .animation-delay-400 {
     animation-delay: 400ms;
   }
