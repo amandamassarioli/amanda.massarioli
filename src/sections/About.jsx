@@ -1,17 +1,10 @@
 import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
-
-const highlights = [
-  {
-    icon: Code2,
-    title: "Clean Code",
-    description:
-      "Writing maintainable, scalable code that stands the test of time.",
-  },
-];
+import brazilMap from "../assets/brazil_map.png";
+import pinIcon from "../assets/pin.png";
 
 export const About = () => {
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
+    <section id="about" className="py-32 relative overflow-hidden bg-black/50">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
@@ -30,7 +23,7 @@ export const About = () => {
               </span>
             </h2>
 
-            <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
+            <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200 text-lg">
               <p>
                 I’m a curious high school student driven by a passion for technology and problem solving.
                 My journey started by participating in academic Olympiads and has
@@ -47,23 +40,44 @@ export const About = () => {
             </div>
           </div>
 
-          {/* Right Column - Hilights */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            {highlights.map((item, idx) => (
+          {/* Right Column - Map */}
+          <div className="relative w-full aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center animate-fade-in animation-delay-300">
+            <div className="relative w-full max-w-md">
+              {/* Map Image */}
+              <img
+                src={brazilMap}
+                alt="Map of Brazil"
+                className="w-full h-auto opacity-80"
+              />
+
+              {/* Pin Indicator - Positioned for São Paulo */}
               <div
-                key={idx}
-                className="glass p-6 rounded-2xl animate-fade-in"
-                style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+                className="absolute w-8 h-8 transform -translate-x-1/2 -translate-y-full"
+                style={{
+                  top: '78%',
+                  left: '68%',
+                }}
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
-                  <item.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {item.description}
-                </p>
+                <img
+                  src={pinIcon}
+                  alt="Location Pin"
+                  className="w-full h-full object-contain drop-shadow-[0_0_10px_rgba(255,0,0,0.5)] animate-bounce"
+                />
               </div>
-            ))}
+
+              {/* Brazil Label */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                <span className="text-7xl font-black text-white/5 uppercase tracking-widest select-none">
+                  Brazil
+                </span>
+              </div>
+            </div>
+
+            {/* Bottom Label */}
+            <div className="absolute bottom-10 right-10 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+              <span className="text-sm font-medium text-white/60 tracking-widest uppercase">São Paulo</span>
+            </div>
           </div>
         </div>
       </div>

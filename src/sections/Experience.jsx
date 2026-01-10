@@ -12,7 +12,7 @@ const experiences = [
     role: "High School Sophomore",
     company: "Anglo Jacareí - Ensino Médio e Pré-Vestibular",
     description:
-      "I continued my studies in Brazilian school subjects, and also advanced classes for the Olympics."],
+      "I continued my studies in Brazilian school subjects, and also advanced classes for the Olympics.",
     current: false,
   },
   {
@@ -78,11 +78,10 @@ export const Experience = () => {
 
                 {/* Content */}
                 <div
-                  className={`pl-8 md:pl-0 ${
-                    idx % 2 === 0
-                      ? "md:pr-16 md:text-right"
-                      : "md:col-start-2 md:pl-16"
-                  }`}
+                  className={`pl-8 md:pl-0 ${idx % 2 === 0
+                    ? "md:pr-16 md:text-right"
+                    : "md:col-start-2 md:pl-16"
+                    }`}
                 >
                   <div
                     className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500`}
@@ -96,11 +95,10 @@ export const Experience = () => {
                       {exp.description}
                     </p>
                     <div
-                      className={`flex flex-wrap gap-2 mt-4 ${
-                        idx % 2 === 0 ? "md:justify-end" : ""
-                      }`}
+                      className={`flex flex-wrap gap-2 mt-4 ${idx % 2 === 0 ? "md:justify-end" : ""
+                        }`}
                     >
-                      {exp.technologies.map((tech, techIdx) => (
+                      {exp.technologies && exp.technologies.map((tech, techIdx) => (
                         <span
                           key={techIdx}
                           className="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground"
